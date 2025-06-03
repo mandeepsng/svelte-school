@@ -597,11 +597,10 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
   h1 {
-    color: #ff3e00;
+    color: var(--accent-color);
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
   }
@@ -611,7 +610,7 @@
   }
 
   .back-link a {
-    color: #0066cc;
+    color: var(--accent-color);
     text-decoration: none;
   }
 
@@ -620,27 +619,33 @@
   }
 
   h2 {
-    color: #333;
-    border-bottom: 2px solid #eee;
+    color: var(--heading-color);
+    border-bottom: 2px solid var(--border-color);
     padding-bottom: 0.5rem;
   }
 
   h3 {
     margin-top: 1.5rem;
     margin-bottom: 1rem;
-    color: #555;
+    color: var(--text-secondary);
+  }
+
+  h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
   }
 
   .demo-box {
-    background-color: #f9f9f9;
+    background-color: var(--card-bg);
     border-radius: 8px;
     padding: 1.5rem;
     margin: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px var(--shadow-color);
   }
 
   .code-example {
-    background-color: #2d2d2d;
+    background-color: var(--code-bg);
     color: #f8f8f2;
     border-radius: 4px;
     padding: 1rem;
@@ -656,37 +661,35 @@
   }
 
   code {
-    background-color: #f0f0f0;
+    background-color: var(--bg-secondary);
     padding: 0.2rem 0.4rem;
     border-radius: 3px;
     font-family: 'Fira Code', monospace;
     font-size: 0.9rem;
   }
 
-  .feature-list {
-    padding-left: 1.5rem;
+  .form-container {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
   }
 
-  .feature-list li {
-    margin: 0.5rem 0;
-  }
-
-  /* Form styles */
-  .registration-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
+  .form-title {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--heading-color);
   }
 
   .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    margin-bottom: 1.5rem;
   }
 
   label {
+    display: block;
+    margin-bottom: 0.5rem;
     font-weight: 500;
-    font-size: 0.95rem;
   }
 
   input[type="text"],
@@ -694,87 +697,123 @@
   input[type="password"],
   textarea,
   select {
-    padding: 0.6rem;
-    border: 1px solid #ddd;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     font-size: 1rem;
-    width: 100%;
+    background-color: var(--bg-color);
+    color: var(--text-color);
   }
 
-  input.error,
-  select.error,
-  textarea.error {
-    border-color: #e03600;
-    background-color: #fff5f5;
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px var(--accent-color-light);
   }
 
-  .error-text {
-    color: #e03600;
-    font-size: 0.8rem;
-    margin: 0.2rem 0 0 0;
+  textarea {
+    min-height: 100px;
   }
 
-  .checkboxes,
-  .radio-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .checkbox-label,
-  .radio-label {
+  .checkbox-group {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-weight: normal;
   }
 
-  .form-actions {
+  .checkbox-group input[type="checkbox"] {
+    margin-right: 0.5rem;
+  }
+
+  .radio-group {
+    margin: 0.5rem 0;
+  }
+
+  .error-message {
+    color: var(--error-color);
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+  }
+
+  .validation-tip {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+  }
+
+  .button-group {
     display: flex;
     gap: 1rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
   }
 
-  button {
-    background-color: #ff3e00;
+  .submit-btn {
+    background-color: var(--accent-color);
     color: white;
     border: none;
-    padding: 0.6rem 1.2rem;
+    padding: 0.75rem 1.5rem;
     border-radius: 4px;
     cursor: pointer;
     font-size: 1rem;
-    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
-  button:hover {
-    background-color: #e03600;
+  .submit-btn:hover:not(:disabled) {
+    background-color: var(--accent-color-dark);
   }
 
-  button:disabled {
-    background-color: #ccc;
+  .submit-btn:disabled {
+    opacity: 0.7;
     cursor: not-allowed;
   }
 
-  .reset-button {
-    background-color: #f0f0f0;
-    color: #333;
+  .reset-btn {
+    background-color: var(--bg-secondary);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
   }
 
-  .reset-button:hover {
-    background-color: #e0e0e0;
+  .reset-btn:hover {
+    background-color: var(--hover-bg);
+  }
+
+  .spinner {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
   }
 
   .success-message {
-    background-color: #eefbee;
-    border: 1px solid #4caf50;
-    padding: 1.5rem;
+    background-color: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--success-color);
+    color: var(--success-color);
+    padding: 1rem;
     border-radius: 4px;
+    margin: 1.5rem 0;
     text-align: center;
   }
 
   .next-steps {
-    background-color: #f0f9ff;
-    border-left: 4px solid #0066cc;
+    background-color: var(--bg-secondary);
+    border-left: 4px solid var(--accent-color);
     padding: 1.5rem;
     border-radius: 0 8px 8px 0;
   }
@@ -784,7 +823,7 @@
   }
 
   .next-steps a {
-    color: #0066cc;
+    color: var(--accent-color);
     text-decoration: none;
   }
 

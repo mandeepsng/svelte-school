@@ -114,11 +114,10 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
   h1 {
-    color: #ff3e00;
+    color: var(--accent-color);
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
   }
@@ -128,7 +127,7 @@
   }
 
   .back-link a {
-    color: #0066cc;
+    color: var(--accent-color);
     text-decoration: none;
   }
 
@@ -137,21 +136,21 @@
   }
 
   h2 {
-    color: #333;
-    border-bottom: 2px solid #eee;
+    color: var(--heading-color);
+    border-bottom: 2px solid var(--border-color);
     padding-bottom: 0.5rem;
   }
 
   .demo-box {
-    background-color: #f9f9f9;
+    background-color: var(--card-bg);
     border-radius: 8px;
     padding: 1.5rem;
     margin: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px var(--shadow-color);
   }
 
   button {
-    background-color: #ff3e00;
+    background-color: var(--accent-color);
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -162,11 +161,11 @@
   }
 
   button:hover {
-    background-color: #e03600;
+    background-color: var(--accent-color-dark);
   }
 
   .highlight {
-    color: #ff3e00;
+    color: var(--accent-color);
     font-weight: bold;
   }
 
@@ -177,19 +176,20 @@
 
   .status-list li {
     padding: 0.5rem 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-color);
   }
 
   .console-message {
-    background-color: #fff5b1;
+    background-color: var(--bg-secondary);
     padding: 0.8rem;
     margin: 1rem 0;
     border-radius: 4px;
     font-size: 0.9rem;
+    border-left: 3px solid var(--warning-color);
   }
 
   code {
-    background-color: #f0f0f0;
+    background-color: var(--bg-secondary);
     padding: 0.2rem 0.4rem;
     border-radius: 3px;
     font-family: 'Fira Code', monospace;
@@ -197,8 +197,8 @@
   }
 
   .next-steps {
-    background-color: #f0f9ff;
-    border-left: 4px solid #0066cc;
+    background-color: var(--bg-secondary);
+    border-left: 4px solid var(--accent-color);
     padding: 1.5rem;
     border-radius: 0 8px 8px 0;
   }
@@ -208,7 +208,7 @@
   }
 
   .next-steps a {
-    color: #0066cc;
+    color: var(--accent-color);
     text-decoration: none;
   }
 

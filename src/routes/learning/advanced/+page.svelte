@@ -227,11 +227,10 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
   h1 {
-    color: #ff3e00;
+    color: var(--accent-color);
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
   }
@@ -241,7 +240,7 @@
   }
 
   .back-link a {
-    color: #0066cc;
+    color: var(--accent-color);
     text-decoration: none;
   }
 
@@ -250,27 +249,27 @@
   }
 
   h2 {
-    color: #333;
-    border-bottom: 2px solid #eee;
+    color: var(--heading-color);
+    border-bottom: 2px solid var(--border-color);
     padding-bottom: 0.5rem;
   }
 
   h3 {
     margin-top: 1.5rem;
     margin-bottom: 1rem;
-    color: #555;
+    color: var(--text-secondary);
   }
 
   .demo-box {
-    background-color: #f9f9f9;
+    background-color: var(--card-bg);
     border-radius: 8px;
     padding: 1.5rem;
     margin: 1rem 0 2rem 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px var(--shadow-color);
   }
 
   button {
-    background-color: #ff3e00;
+    background-color: var(--accent-color);
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -281,27 +280,29 @@
   }
 
   button:hover {
-    background-color: #e03600;
+    background-color: var(--accent-color-dark);
   }
 
   input {
     padding: 0.5rem;
     font-size: 1rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     margin-right: 0.5rem;
     width: 250px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
   }
 
   .note {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-muted);
     font-style: italic;
     margin: 0.5rem 0;
   }
 
   code {
-    background-color: #f0f0f0;
+    background-color: var(--bg-secondary);
     padding: 0.2rem 0.4rem;
     border-radius: 3px;
     font-family: 'Fira Code', monospace;
@@ -309,15 +310,15 @@
   }
 
   .transition-demo {
-    background-color: #ffe9e3;
+    background-color: var(--bg-secondary);
     padding: 1rem;
     margin: 1rem 0;
     border-radius: 4px;
-    border-left: 3px solid #ff3e00;
+    border-left: 3px solid var(--accent-color);
   }
 
   .box {
-    background-color: #ff3e00;
+    background-color: var(--accent-color);
     color: white;
     width: 100px;
     height: 100px;
@@ -336,7 +337,7 @@
   }
 
   .flip-list li {
-    background-color: #f0f0f0;
+    background-color: var(--bg-secondary);
     margin: 0.5rem 0;
     padding: 0.8rem 1rem;
     border-radius: 4px;
@@ -358,13 +359,13 @@
     align-items: center;
     padding: 0.8rem 1rem;
     margin: 0.5rem 0;
-    background-color: #f0f0f0;
+    background-color: var(--bg-secondary);
     border-radius: 4px;
   }
 
   .remove-btn {
     background: none;
-    color: #999;
+    color: var(--text-muted);
     border: none;
     font-size: 1.2rem;
     cursor: pointer;
@@ -374,13 +375,13 @@
   }
 
   .remove-btn:hover {
-    color: #ff3e00;
+    color: var(--accent-color);
     background: none;
   }
 
   .next-steps {
-    background-color: #f0f9ff;
-    border-left: 4px solid #0066cc;
+    background-color: var(--bg-secondary);
+    border-left: 4px solid var(--accent-color);
     padding: 1.5rem;
     border-radius: 0 8px 8px 0;
   }
@@ -390,7 +391,7 @@
   }
 
   .next-steps a {
-    color: #0066cc;
+    color: var(--accent-color);
     text-decoration: none;
   }
 

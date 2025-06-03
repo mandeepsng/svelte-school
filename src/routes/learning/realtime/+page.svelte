@@ -630,11 +630,10 @@ Broadcast::channel('presence-chat.{roomId}', function ($user, $roomId) {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
   h1 {
-    color: #ff3e00;
+    color: var(--accent-color);
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
   }
@@ -644,7 +643,7 @@ Broadcast::channel('presence-chat.{roomId}', function ($user, $roomId) {
   }
 
   .back-link a {
-    color: #0066cc;
+    color: var(--accent-color);
     text-decoration: none;
   }
 
@@ -653,33 +652,33 @@ Broadcast::channel('presence-chat.{roomId}', function ($user, $roomId) {
   }
 
   h2 {
-    color: #333;
-    border-bottom: 2px solid #eee;
+    color: var(--heading-color);
+    border-bottom: 2px solid var(--border-color);
     padding-bottom: 0.5rem;
   }
 
   h3 {
     margin-top: 1.5rem;
     margin-bottom: 1rem;
-    color: #555;
+    color: var(--text-secondary);
   }
 
   h4 {
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
-    color: #666;
+    color: var(--text-muted);
   }
 
   .demo-box {
-    background-color: #f9f9f9;
+    background-color: var(--card-bg);
     border-radius: 8px;
     padding: 1.5rem;
     margin: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px var(--shadow-color);
   }
 
   .code-example {
-    background-color: #2d2d2d;
+    background-color: var(--code-bg);
     color: #f8f8f2;
     border-radius: 4px;
     padding: 1rem;
@@ -695,7 +694,7 @@ Broadcast::channel('presence-chat.{roomId}', function ($user, $roomId) {
   }
 
   code {
-    background-color: #f0f0f0;
+    background-color: var(--bg-secondary);
     padding: 0.2rem 0.4rem;
     border-radius: 3px;
     font-family: 'Fira Code', monospace;
@@ -707,171 +706,210 @@ Broadcast::channel('presence-chat.{roomId}', function ($user, $roomId) {
   }
 
   .feature-list li {
-    margin: 0.8rem 0;
-  }
-
-  button {
-    background-color: #ff3e00;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-  }
-
-  button:hover {
-    background-color: #e03600;
-  }
-
-  button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+    margin: 0.5rem 0;
   }
 
   .note {
-    background-color: #fff5e6;
-    border-left: 4px solid #ffaa33;
+    background-color: var(--bg-secondary);
+    border-left: 4px solid var(--warning-color);
     padding: 0.8rem 1rem;
     margin: 1rem 0;
     border-radius: 0 4px 4px 0;
     font-size: 0.95rem;
   }
 
-  /* Chat styles */
-  .connection-status {
+  button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0.5rem 0.3rem 0.5rem 0;
+  }
+
+  button:hover {
+    background-color: var(--accent-color-dark);
+  }
+
+  input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    width: 100%;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+
+  /* Realtime demos */
+  .realtime-demo {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 2rem 0;
+  }
+
+  .demo-header {
+    background-color: var(--header-bg);
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .demo-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0;
+  }
+
+  .connection-indicator {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    font-size: 0.9rem;
   }
 
-  .connected {
-    color: #4caf50;
-    font-weight: bold;
+  .status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
   }
 
-  .disconnected {
-    color: #f44336;
-    font-weight: bold;
+  .status-connected {
+    background-color: var(--success-color);
   }
 
+  .status-disconnected {
+    background-color: var(--error-color);
+  }
+
+  .status-connecting {
+    background-color: var(--warning-color);
+  }
+
+  /* Chat demo */
   .chat-container {
     display: flex;
     flex-direction: column;
     height: 400px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    overflow: hidden;
   }
 
   .chat-messages {
     flex: 1;
     padding: 1rem;
     overflow-y: auto;
-    background-color: white;
+    background-color: var(--bg-color);
   }
 
-  .message {
+  .chat-message {
     margin-bottom: 1rem;
-    padding: 0.8rem;
-    background-color: #f0f0f0;
-    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    max-width: 80%;
   }
 
-  .message-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
-    font-size: 0.85rem;
+  .message-mine {
+    background-color: var(--accent-color-light);
+    align-self: flex-end;
+    margin-left: auto;
   }
 
-  .user {
-    font-weight: bold;
-    color: #0066cc;
+  .message-other {
+    background-color: var(--bg-secondary);
+    align-self: flex-start;
   }
 
-  .time {
-    color: #666;
+  .message-system {
+    background-color: var(--bg-secondary);
+    color: var(--text-muted);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-style: italic;
+    padding: 0.3rem 1rem;
   }
 
-  .message-text {
-    color: #333;
+  .message-user {
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+
+  .message-time {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.3rem;
+    text-align: right;
   }
 
   .chat-input {
     display: flex;
     padding: 0.8rem;
-    border-top: 1px solid #ddd;
-    background-color: #f9f9f9;
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
   }
 
   .chat-input input {
     flex: 1;
-    padding: 0.6rem;
-    border: 1px solid #ddd;
-    border-radius: 4px 0 0 4px;
-    font-size: 1rem;
+    margin-right: 0.5rem;
   }
 
-  .chat-input button {
-    border-radius: 0 4px 4px 0;
+  /* Notifications demo */
+  .notification-center {
+    padding: 1rem;
+    background-color: var(--bg-color);
   }
 
-  /* Notification styles */
-  .notification-container {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    overflow: hidden;
-  }
-
-  .notification-header {
-    display: flex;
-    justify-content: space-between;
+  .notification-badge {
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
+    background-color: var(--error-color);
+    color: white;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+  }
+
+  .notification-item {
     padding: 0.8rem;
-    background-color: #f0f0f0;
-    border-bottom: 1px solid #ddd;
-  }
-
-  .notification-header h4 {
-    margin: 0;
-  }
-
-  .notifications {
-    max-height: 200px;
-    overflow-y: auto;
-    background-color: white;
-    padding: 0.5rem;
-  }
-
-  .notification {
-    padding: 0.8rem;
-    border-bottom: 1px solid #eee;
-  }
-
-  .notification:last-child {
-    border-bottom: none;
-  }
-
-  .notification-text {
-    margin-bottom: 0.3rem;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg-secondary);
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
   }
 
   .notification-time {
     font-size: 0.8rem;
-    color: #666;
+    color: var(--text-muted);
+    margin-top: 0.3rem;
   }
 
-  .no-notifications {
+  .clear-btn {
+    background-color: var(--bg-secondary);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+  }
+
+  .clear-btn:hover {
+    background-color: var(--hover-bg);
+  }
+
+  .empty-state {
     text-align: center;
-    color: #666;
-    padding: 1rem;
+    padding: 2rem;
+    color: var(--text-muted);
+    font-style: italic;
   }
 
   .next-steps {
-    background-color: #f0f9ff;
-    border-left: 4px solid #0066cc;
+    background-color: var(--bg-secondary);
+    border-left: 4px solid var(--accent-color);
     padding: 1.5rem;
     border-radius: 0 8px 8px 0;
   }
@@ -881,7 +919,7 @@ Broadcast::channel('presence-chat.{roomId}', function ($user, $roomId) {
   }
 
   .next-steps a {
-    color: #0066cc;
+    color: var(--accent-color);
     text-decoration: none;
   }
 

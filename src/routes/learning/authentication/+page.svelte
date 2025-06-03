@@ -514,11 +514,10 @@ export async function load({ url }) {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
   h1 {
-    color: #ff3e00;
+    color: var(--accent-color);
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
   }
@@ -528,7 +527,7 @@ export async function load({ url }) {
   }
 
   .back-link a {
-    color: #0066cc;
+    color: var(--accent-color);
     text-decoration: none;
   }
 
@@ -537,39 +536,39 @@ export async function load({ url }) {
   }
 
   h2 {
-    color: #333;
-    border-bottom: 2px solid #eee;
+    color: var(--heading-color);
+    border-bottom: 2px solid var(--border-color);
     padding-bottom: 0.5rem;
   }
 
   h3 {
     margin-top: 1.5rem;
     margin-bottom: 1rem;
-    color: #555;
+    color: var(--text-secondary);
   }
 
   h4 {
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
-    color: #666;
+    color: var(--text-muted);
   }
 
   h5 {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
-    color: #666;
+    color: var(--text-muted);
   }
 
   .demo-box {
-    background-color: #f9f9f9;
+    background-color: var(--card-bg);
     border-radius: 8px;
     padding: 1.5rem;
     margin: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px var(--shadow-color);
   }
 
   .code-example {
-    background-color: #2d2d2d;
+    background-color: var(--code-bg);
     color: #f8f8f2;
     border-radius: 4px;
     padding: 1rem;
@@ -585,7 +584,7 @@ export async function load({ url }) {
   }
 
   code {
-    background-color: #f0f0f0;
+    background-color: var(--bg-secondary);
     padding: 0.2rem 0.4rem;
     border-radius: 3px;
     font-family: 'Fira Code', monospace;
@@ -593,8 +592,8 @@ export async function load({ url }) {
   }
 
   .note {
-    background-color: #fff5e6;
-    border-left: 4px solid #ffaa33;
+    background-color: var(--bg-secondary);
+    border-left: 4px solid var(--warning-color);
     padding: 0.8rem 1rem;
     margin: 1rem 0;
     border-radius: 0 4px 4px 0;
@@ -609,7 +608,7 @@ export async function load({ url }) {
   }
 
   .approach {
-    border: 1px solid #eee;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     padding: 1rem;
   }
@@ -623,7 +622,7 @@ export async function load({ url }) {
   }
 
   button {
-    background-color: #ff3e00;
+    background-color: var(--accent-color);
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -634,12 +633,12 @@ export async function load({ url }) {
   }
 
   button:hover {
-    background-color: #e03600;
+    background-color: var(--accent-color-dark);
   }
 
   .login-example {
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 1.5rem;
     margin: 1rem 0;
@@ -665,20 +664,22 @@ export async function load({ url }) {
 
   .form-group input {
     padding: 0.6rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     font-size: 1rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
   }
 
   .hint {
     font-size: 0.8rem;
-    color: #888;
+    color: var(--text-muted);
     margin-top: 0.3rem;
   }
 
   .error-message {
-    background-color: #ffebe9;
-    color: #e03600;
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--error-color);
     padding: 0.5rem 1rem;
     border-radius: 4px;
     margin-bottom: 1rem;
@@ -690,13 +691,13 @@ export async function load({ url }) {
   }
 
   .logout-button {
-    background-color: #f0f0f0;
-    color: #666;
+    background-color: var(--bg-secondary);
+    color: var(--text-muted);
   }
 
   .logout-button:hover {
-    background-color: #e0e0e0;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
   }
 
   .auth-success {
@@ -707,7 +708,7 @@ export async function load({ url }) {
   }
 
   .success-icon {
-    background-color: #4caf50;
+    background-color: var(--success-color);
     color: white;
     width: 40px;
     height: 40px;
@@ -725,7 +726,7 @@ export async function load({ url }) {
   }
 
   .token {
-    background-color: #f0f0f0;
+    background-color: var(--bg-secondary);
     padding: 0.5rem;
     border-radius: 4px;
     font-size: 0.8rem;
@@ -733,8 +734,8 @@ export async function load({ url }) {
   }
 
   .next-steps {
-    background-color: #f0f9ff;
-    border-left: 4px solid #0066cc;
+    background-color: var(--bg-secondary);
+    border-left: 4px solid var(--accent-color);
     padding: 1.5rem;
     border-radius: 0 8px 8px 0;
   }
@@ -744,7 +745,7 @@ export async function load({ url }) {
   }
 
   .next-steps a {
-    color: #0066cc;
+    color: var(--accent-color);
     text-decoration: none;
   }
 

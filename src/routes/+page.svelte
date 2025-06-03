@@ -8,6 +8,10 @@
   });
 </script>
 
+<svelte:head>
+  <title>Svelte Learning Path</title>
+</svelte:head>
+
 <main>
   <h1>{title}</h1>
   <p>Welcome to this self-learning resource for Svelte. This project will help you learn Svelte step by step with practical examples.</p>
@@ -20,7 +24,8 @@
       <li><a href="/learning/lifecycle">Component Lifecycle</a> - Understanding component lifecycle</li>
       <li><a href="/learning/events">Events and Bindings</a> - Handling user interactions</li>
       <li><a href="/learning/stores">Svelte Stores</a> - State management in Svelte</li>
-      <li><a href="/learning/advanced">Advanced Techniques</a> - Animations, transitions, and more</li>
+      <li><a href="/learning/svelte-animations">Svelte Animations</a> - Transitions, animations and effects</li>
+      <li><a href="/learning/advanced">Advanced Techniques</a> - Advanced patterns and more</li>
       <li><a href="/learning/routing">SvelteKit Routing and SSR</a> - File-based routing and server-side rendering</li>
       <li><a href="/learning/authentication">Authentication with Laravel</a> - Integrate Sanctum/Passport auth</li>
       <li><a href="/learning/api-integration">API Integration Techniques</a> - Connect to Laravel backend</li>
@@ -41,25 +46,24 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   
   h1 {
-    color: #ff3e00;
+    color: var(--accent-color);
     font-size: 2.5rem;
     margin-bottom: 1rem;
   }
   
   .card {
-    background-color: #f9f9f9;
+    background-color: var(--card-bg);
     border-radius: 8px;
     padding: 1.5rem;
     margin: 2rem 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px var(--shadow-color);
   }
   
   h2 {
-    color: #444;
+    color: var(--heading-color);
     margin-top: 0;
   }
   
@@ -78,11 +82,11 @@
     content: '→';
     position: absolute;
     left: 0;
-    color: #ff3e00;
+    color: var(--accent-color);
   }
   
   a {
-    color: #0066cc;
+    color: var(--accent-color);
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: border-color 0.2s;
@@ -93,8 +97,8 @@
   }
   
   .info {
-    background-color: #ffefe9;
-    border-left: 4px solid #ff3e00;
+    background-color: var(--bg-secondary);
+    border-left: 4px solid var(--accent-color);
     padding: 1rem 1.5rem;
     margin-top: 2rem;
     border-radius: 0 8px 8px 0;
@@ -102,6 +106,10 @@
   
   h3 {
     margin-top: 0;
-    color: #333;
+    color: var(--heading-color);
+  }
+  
+  p {
+    color: var(--text-color);
   }
 </style>

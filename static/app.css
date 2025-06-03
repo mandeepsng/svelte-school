@@ -8,6 +8,9 @@
   --text-secondary: #555555;
   --text-muted: #777777;
   --accent-color: #3b82f6;
+  --accent-color-light: #93c5fd;
+  --accent-color-dark: #2563eb;
+  --accent-color-darker: #1d4ed8;
   --heading-color: #111827;
   --border-color: #e5e7eb;
   --card-bg: #ffffff;
@@ -31,6 +34,9 @@
   --text-secondary: #d1d5db;
   --text-muted: #9ca3af;
   --accent-color: #60a5fa;
+  --accent-color-light: #93c5fd;
+  --accent-color-dark: #3b82f6;
+  --accent-color-darker: #2563eb;
   --heading-color: #f3f4f6;
   --border-color: #374151;
   --card-bg: #1e293b;

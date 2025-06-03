@@ -302,11 +302,10 @@ export const entries = () => [
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
   h1 {
-    color: #ff3e00;
+    color: var(--accent-color);
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
   }
@@ -316,7 +315,7 @@ export const entries = () => [
   }
 
   .back-link a {
-    color: #0066cc;
+    color: var(--accent-color);
     text-decoration: none;
   }
 
@@ -325,33 +324,33 @@ export const entries = () => [
   }
 
   h2 {
-    color: #333;
-    border-bottom: 2px solid #eee;
+    color: var(--heading-color);
+    border-bottom: 2px solid var(--border-color);
     padding-bottom: 0.5rem;
   }
 
   h3 {
     margin-top: 1.5rem;
     margin-bottom: 1rem;
-    color: #555;
+    color: var(--text-secondary);
   }
 
   h4 {
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
-    color: #666;
+    color: var(--text-muted);
   }
 
   .demo-box {
-    background-color: #f9f9f9;
+    background-color: var(--card-bg);
     border-radius: 8px;
     padding: 1.5rem;
     margin: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px var(--shadow-color);
   }
 
   .code-example {
-    background-color: #2d2d2d;
+    background-color: var(--code-bg);
     color: #f8f8f2;
     border-radius: 4px;
     padding: 1rem;
@@ -367,7 +366,7 @@ export const entries = () => [
   }
 
   code {
-    background-color: #f0f0f0;
+    background-color: var(--bg-secondary);
     padding: 0.2rem 0.4rem;
     border-radius: 3px;
     font-family: 'Fira Code', monospace;
@@ -392,19 +391,19 @@ export const entries = () => [
 
   .demo-link {
     display: inline-block;
-    background-color: #f0f0f0;
+    background-color: var(--bg-secondary);
     padding: 0.5rem 1rem;
     border-radius: 4px;
-    color: #0066cc;
+    color: var(--accent-color);
     text-decoration: none;
   }
 
   .demo-link:hover {
-    background-color: #e0e0e0;
+    background-color: var(--hover-bg);
   }
 
   button {
-    background-color: #ff3e00;
+    background-color: var(--accent-color);
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -415,19 +414,19 @@ export const entries = () => [
   }
 
   button:hover {
-    background-color: #e03600;
+    background-color: var(--accent-color-dark);
   }
 
   .layout-example {
     margin-top: 1.5rem;
-    border: 2px dashed #ccc;
+    border: 2px dashed var(--border-color);
     border-radius: 8px;
     overflow: hidden;
   }
 
   .layout-header {
-    background-color: #333;
-    color: white;
+    background-color: var(--header-bg);
+    color: var(--text-color);
     padding: 1rem;
     display: flex;
     justify-content: space-between;
@@ -446,35 +445,36 @@ export const entries = () => [
   .login-btn {
     cursor: pointer;
     padding: 0.3rem 0.8rem;
-    background-color: #ff3e00;
+    background-color: var(--accent-color);
     border-radius: 4px;
+    color: white;
   }
 
   .layout-content {
     min-height: 200px;
     padding: 0;
-    background-color: #f5f5f5;
+    background-color: var(--bg-color);
   }
 
   .page-content {
     padding: 1.5rem;
     margin: 1rem;
-    background-color: white;
+    background-color: var(--card-bg);
     border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px var(--shadow-color);
   }
 
   .layout-footer {
-    background-color: #f0f0f0;
+    background-color: var(--footer-bg);
     padding: 1rem;
     text-align: center;
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-muted);
   }
 
   .next-steps {
-    background-color: #f0f9ff;
-    border-left: 4px solid #0066cc;
+    background-color: var(--bg-secondary);
+    border-left: 4px solid var(--accent-color);
     padding: 1.5rem;
     border-radius: 0 8px 8px 0;
   }
@@ -484,7 +484,7 @@ export const entries = () => [
   }
 
   .next-steps a {
-    color: #0066cc;
+    color: var(--accent-color);
     text-decoration: none;
   }
 

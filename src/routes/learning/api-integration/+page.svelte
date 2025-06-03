@@ -540,11 +540,10 @@ async function submitForm(formData) {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
   h1 {
-    color: #ff3e00;
+    color: var(--accent-color);
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
   }
@@ -554,7 +553,7 @@ async function submitForm(formData) {
   }
 
   .back-link a {
-    color: #0066cc;
+    color: var(--accent-color);
     text-decoration: none;
   }
 
@@ -563,33 +562,33 @@ async function submitForm(formData) {
   }
 
   h2 {
-    color: #333;
-    border-bottom: 2px solid #eee;
+    color: var(--heading-color);
+    border-bottom: 2px solid var(--border-color);
     padding-bottom: 0.5rem;
   }
 
   h3 {
     margin-top: 1.5rem;
     margin-bottom: 1rem;
-    color: #555;
+    color: var(--text-secondary);
   }
 
   h4 {
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
-    color: #666;
+    color: var(--text-muted);
   }
 
   .demo-box {
-    background-color: #f9f9f9;
+    background-color: var(--card-bg);
     border-radius: 8px;
     padding: 1.5rem;
     margin: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px var(--shadow-color);
   }
 
   .code-example {
-    background-color: #2d2d2d;
+    background-color: var(--code-bg);
     color: #f8f8f2;
     border-radius: 4px;
     padding: 1rem;
@@ -605,11 +604,20 @@ async function submitForm(formData) {
   }
 
   code {
-    background-color: #f0f0f0;
+    background-color: var(--bg-secondary);
     padding: 0.2rem 0.4rem;
     border-radius: 3px;
     font-family: 'Fira Code', monospace;
     font-size: 0.9rem;
+  }
+
+  .note {
+    background-color: var(--bg-secondary);
+    border-left: 4px solid var(--warning-color);
+    padding: 0.8rem 1rem;
+    margin: 1rem 0;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.95rem;
   }
 
   .feature-list {
@@ -617,11 +625,11 @@ async function submitForm(formData) {
   }
 
   .feature-list li {
-    margin: 0.8rem 0;
+    margin: 0.5rem 0;
   }
 
   button {
-    background-color: #ff3e00;
+    background-color: var(--accent-color);
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -632,74 +640,107 @@ async function submitForm(formData) {
   }
 
   button:hover {
-    background-color: #e03600;
+    background-color: var(--accent-color-dark);
   }
 
-  .refresh-btn {
+  .demo-api {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    margin: 1.5rem 0;
+    overflow: hidden;
+  }
+
+  .demo-header {
+    background-color: var(--bg-secondary);
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--border-color);
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 0.5rem;
   }
 
-  .posts-container {
-    margin-top: 1.5rem;
-    min-height: 200px;
+  .demo-content {
+    padding: 1rem;
   }
 
-  .loading-spinner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  .posts-list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .post-item {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    background-color: var(--card-bg);
+  }
+
+  .post-title {
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--heading-color);
+  }
+
+  .post-body {
+    margin: 0;
+    color: var(--text-color);
+  }
+
+  .loading {
+    text-align: center;
     padding: 2rem;
+    color: var(--text-muted);
   }
 
-  .spinner {
-    width: 40px;
-    height: 40px;
-    border: 4px solid rgba(255, 62, 0, 0.1);
-    border-left-color: #ff3e00;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-  }
-
-  @keyframes spin {
-    to { transform: rotate(360deg); }
-  }
-
-  .error-message {
-    background-color: #ffebe9;
-    color: #e03600;
+  .error {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--error-color);
     padding: 1rem;
     border-radius: 4px;
     margin: 1rem 0;
   }
 
-  .posts-list {
-    display: grid;
-    gap: 1rem;
-  }
-
-  .post-card {
-    background-color: white;
-    border: 1px solid #eee;
-    border-radius: 4px;
+  .success {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--success-color);
     padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
   }
 
-  .post-card h4 {
-    margin-top: 0;
-    color: #333;
+  .badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
   }
 
-  .post-card p {
-    margin-bottom: 0;
-    color: #666;
+  .badge-success {
+    background-color: var(--success-color);
+    color: white;
+  }
+
+  .badge-error {
+    background-color: var(--error-color);
+    color: white;
+  }
+
+  .badge-warning {
+    background-color: var(--warning-color);
+    color: white;
+  }
+
+  .badge-info {
+    background-color: var(--info-color);
+    color: white;
   }
 
   .next-steps {
-    background-color: #f0f9ff;
-    border-left: 4px solid #0066cc;
+    background-color: var(--bg-secondary);
+    border-left: 4px solid var(--accent-color);
     padding: 1.5rem;
     border-radius: 0 8px 8px 0;
   }
@@ -709,11 +750,39 @@ async function submitForm(formData) {
   }
 
   .next-steps a {
-    color: #0066cc;
+    color: var(--accent-color);
     text-decoration: none;
   }
 
   .next-steps a:hover {
     text-decoration: underline;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  th {
+    background-color: var(--bg-secondary);
+  }
+
+  tr:nth-child(even) {
+    background-color: var(--bg-secondary);
+  }
+
+  @media (max-width: 600px) {
+    .demo-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
   }
 </style> 

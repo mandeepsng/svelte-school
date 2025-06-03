@@ -106,11 +106,10 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
   h1 {
-    color: #ff3e00;
+    color: var(--accent-color);
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
   }
@@ -120,7 +119,7 @@
   }
 
   .back-link a {
-    color: #0066cc;
+    color: var(--accent-color);
     text-decoration: none;
   }
 
@@ -129,21 +128,21 @@
   }
 
   h2 {
-    color: #333;
-    border-bottom: 2px solid #eee;
+    color: var(--heading-color);
+    border-bottom: 2px solid var(--border-color);
     padding-bottom: 0.5rem;
   }
 
   .demo-box {
-    background-color: #f9f9f9;
+    background-color: var(--card-bg);
     border-radius: 8px;
     padding: 1.5rem;
     margin: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px var(--shadow-color);
   }
 
   button {
-    background-color: #ff3e00;
+    background-color: var(--accent-color);
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -154,20 +153,22 @@
   }
 
   button:hover {
-    background-color: #e03600;
+    background-color: var(--accent-color-dark);
   }
 
   input {
     padding: 0.5rem;
     font-size: 1rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     margin-right: 0.5rem;
     width: 200px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
   }
 
   .highlight {
-    color: #ff3e00;
+    color: var(--accent-color);
     font-weight: bold;
   }
 
@@ -193,23 +194,23 @@
   }
 
   .status.high {
-    background-color: #ffebe6;
-    color: #d73a49;
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--error-color);
   }
 
   .status.medium {
-    background-color: #fff5b1;
-    color: #735c0f;
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--warning-color);
   }
 
   .status.low {
-    background-color: #e6fffa;
-    color: #00a3c4;
+    background-color: rgba(59, 130, 246, 0.1);
+    color: var(--info-color);
   }
 
   .next-steps {
-    background-color: #f0f9ff;
-    border-left: 4px solid #0066cc;
+    background-color: var(--bg-secondary);
+    border-left: 4px solid var(--accent-color);
     padding: 1.5rem;
     border-radius: 0 8px 8px 0;
   }
@@ -219,7 +220,7 @@
   }
 
   .next-steps a {
-    color: #0066cc;
+    color: var(--accent-color);
     text-decoration: none;
   }
 

@@ -3,6 +3,7 @@
   import { fly } from 'svelte/transition';
   import { page } from '$app/stores';
   import ThemeToggle from '$lib/components/ThemeToggle.svelte';
+  import NewsletterSignup from '$lib/components/NewsletterSignup.svelte';
   import { theme } from '$lib/stores/theme';
   
   // Apply theme class to body
@@ -55,7 +56,35 @@
 
   <footer>
     <div class="container">
-      <p>&copy; {new Date().getFullYear()} Svelte Learning</p>
+      <div class="footer-content">
+        <div class="footer-newsletter">
+          <NewsletterSignup />
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Learning Path</h4>
+            <ul>
+              <li><a href="/learning">All Modules</a></li>
+              <li><a href="/learning/svelte-basics">Svelte Basics</a></li>
+              <li><a href="/learning/svelte-stores">Svelte Stores</a></li>
+              <li><a href="/learning/svelte-animations">Animations</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="https://svelte.dev" target="_blank" rel="noopener">Official Svelte Docs</a></li>
+              <li><a href="https://kit.svelte.dev" target="_blank" rel="noopener">SvelteKit Docs</a></li>
+              <li><a href="https://laravel.com" target="_blank" rel="noopener">Laravel Docs</a></li>
+              <li><a href="/about">About This Project</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} Svelte Learning</p>
+        <p>Built with SvelteKit</p>
+      </div>
     </div>
   </footer>
 </div>
@@ -125,8 +154,55 @@
   
   footer {
     background-color: var(--footer-bg);
-    padding: 1.5rem 0;
+    padding: 2.5rem 0 1.5rem;
     color: var(--text-muted);
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .footer-column h4 {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin: 0 0 1rem;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-column li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-column a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .footer-column a:hover {
+    color: var(--accent-color);
+  }
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
     font-size: 0.9rem;
   }
   
@@ -161,6 +237,18 @@
       position: absolute;
       top: 1rem;
       right: 1.5rem;
+    }
+    
+    .footer-content, 
+    .footer-links {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    .footer-bottom {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
     }
   }
 </style> 
